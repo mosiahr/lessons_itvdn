@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Урок 2 Задание 2</title>
+</head>
+<body>
+    <script>
+//        002_Условные и циклические конструкции
+//        Задание 2
+        var a, b, rez = null;
+
+        a = +prompt("Введите число А: ");
+        b = +prompt("Введите число B: ");
+
+        for(var i=a+1; i < b; i++ ){
+            rez += i;
+            if (i%2 != 0){
+                document.write(i, '; ');
+            }
+        }
+
+        document.write('<br>Сумма всех чисел, расположенных в числовом промежутке от ' + a + ' до ' + b + ': ' + rez);
+    </script>
+    </body>
+</html>
