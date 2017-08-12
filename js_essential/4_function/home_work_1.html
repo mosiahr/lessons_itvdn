@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Урок 4 Задание 1</title>
+</head>
+<body>
+<script>
+
+    var a = +prompt('Введите число А: ');
+    var b = +prompt('Введите число B: ');
+    var operation = prompt('Выберите операцию: ');
+
+    try {
+        function add(a, b) {
+            return a + b;
+        }
+
+        function sub(a, b) {
+            return a - b;
+        }
+
+        function mul(a, b) {
+            return a * b;
+        }
+
+        function div(a, b) {
+            if(b != 0){
+                return a / b;
+            }
+            else{
+                document.write("Деление на ноль! <br>");
+            }
+        }
+
+        switch(operation) {
+            case '+':
+                rez = add(a, b);
+                break;
+            case '-':
+                rez = sub(a, b);
+                break;
+            case '*':
+                rez = mul(a, b);
+                break;
+            case '/':
+                rez = div(a, b);
+                break;
+        }
+
+        document.write(a + operation + b + ' = ' + rez.toFixed(2));
+    }
+    catch (e){
+        document.write('Выбранная операция не верна');
+    }
+</script>
+</body>
+</html>
