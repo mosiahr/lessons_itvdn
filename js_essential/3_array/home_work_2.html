@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Урок 3 Задание 2</title>
+
+</head>
+<body>
+<script>
+    var array = [21, 56, 101, 2, 45, 78, 99, 1001];
+
+    for (var el in array ){
+        document.write(array[el]+'<br>');
+    }
+    document.write('<hr>');
+
+    var max1 = Math.max(...array);
+    document.write('Наибольшее значение массива: ', max1, '<br>');
+
+    var max2 = array.reduce(function(a, b){
+        return Math.max(a, b);
+    });
+    document.write('Наибольшее значение массива(2 способ) : ', max2, '<br>');
+
+    var min1 = Math.min(...array);
+    document.write('Наименьшее значение массива: ', min1, '<br>');
+
+    var min2 = array.reduce(function(a,b){
+        return Math.min(a,b);
+    });
+    document.write('Наименьшее значение массива(2 способ) : ', min2, '<br>');
+
+    var sum = null;
+    for (i=0; i<array.length; i++){
+        sum += array[i];
+    }
+    document.write('Общая сумма элементов: ', sum, '<br>');
+
+    var average = sum/2;
+    document.write('Среднее арифметическое всех элементов: ', average, '<br>');
+
+    var arrOdd = [];
+    for (i=0; i<array.length; i++) {
+        if (array[i]%2 != 0){
+            arrOdd.push(array[i]);
+        }
+    }
+    document.write('Нечетные значения массива: ', arrOdd.join(', '));
+
+</script>
+</body>
+</html>
