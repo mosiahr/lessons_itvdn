@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Урок 3 Задание 3</title>
+</head>
+<body>
+<script>
+    var array = new Array(5);
+
+    array[0] = [101, 5, 156, 88, 9];
+    array[1] = [-10, 59, 1956, 177, 8];
+    array[2] = [0, -5, 698, -88, 990];
+    array[3] = [55, 56, 45, -6, 459];
+    array[4] = [1000, 5000, -1111, -98788, 90];
+
+    for (i=0; i< array.length; i++){
+        document.write(array[i], '<br>');
+    }
+
+    document.write('<hr>');
+    for (i=0; i<array.length; i++){
+        for (j=0; j<array.length; j++){
+            if(i == j){
+                if(array[i][j] < 0){
+                    array[i][j] = 0;
+                }
+                else{
+                    array[i][j] = 1;
+
+                }
+            }
+        }
+    }
+    
+   for (i=0; i< array.length; i++){
+        document.write(array[i], '<br>');
+    }
+
+</script>
+</body>
+</html>
