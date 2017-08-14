@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Урок 2 Задание 1</title>
+</head>
+<body>
+<script>
+
+    function MyObj(name) {
+        // Свойство экземпляра
+        this.name = name;
+    }
+
+    // Свойство на функции-конструкторе (статическое свойство)
+    MyObj.staticProperty = "Some Property";
+
+    // Метод на экземпляре
+    MyObj.prototype.myMethod = function (){
+        document.write("Object name: " + this.name + "<br/>");
+    }
+
+    // Метод на функции конструкторе (статический метод)
+    MyObj.staticMethod = function() {
+        document.write("Static Method and Static Property: "+ MyObj.staticProperty + "<br/>");
+    }
+
+    // Экземпляр объекта
+    var ob = new MyObj('КОЛЯ' + '<br/>');
+    document.write(ob.name);
+
+    // Вызов функции на объекте
+    ob.myMethod();
+
+    // Вызов функции на конструкторе
+    MyObj.staticMethod();
+
+
+</script>
+</body>
+</html>
