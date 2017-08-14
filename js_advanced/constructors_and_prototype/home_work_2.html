@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Урок 2 Задание 2</title>
+</head>
+<body>
+<script>
+
+    function Human(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Переопределние метода toString()
+    Human.prototype.toString = function (){
+        return "[Name: "+this.name +"; Age: "+this.age + "] ";
+    }
+
+    var human = [new Human('Коля', 25), new Human('Саша', 35), new Human('Вася', 31)];
+    document.write(human + '<br/>');
+
+    human.sort(function (a, b) {
+        var x = a.age;
+        var y = b.age;
+
+        if (x > y) return 1;
+        if (x < y) return -1;
+        return 0;
+
+//        return x-y;
+    });
+
+    document.write(human);
+
+</script>
+</body>
+</html>
