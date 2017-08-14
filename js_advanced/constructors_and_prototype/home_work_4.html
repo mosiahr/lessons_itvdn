@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Урок 2 Задание 4</title>
+</head>
+<body>
+<script>
+    // Функция-конструктор Human
+    function Human(name, age){
+        this.Name = name;
+        this.Age = age;
+    }
+
+    // Переопределние метода toString(). Так как каждый объект обладает методом toString,
+    // который вызывается автоматически каждый раз, когда требуется строковое представление объекта,
+    // то мы можем определить перевод объекта в строку.
+
+    Human.prototype.toString = function (){
+        return "Name: "+this.Name +"; Age: "+this.Age+"; Age: "+this.Nation+ ";<br/>";
+    }
+
+    Human.nationality = function(whereFrom){
+        switch (whereFrom){
+            case "asia": return "Asian"; break;
+            case "europe": return "Europian"; break;
+            case "arabic": return "Arabic"; break;
+            case "america": return "American"; break;
+            case "africa": return "African"; break;
+            default: return "Undefiend"; break;
+        }
+    }
+
+    var Alex = new Human("Alex", 36);
+    var Svetlana = new Human("Svetlana", 33);
+
+    Alex.Nation = Human.nationality("america");
+    Svetlana.Nation = Human.nationality("europe");
+
+    document.write(Alex);
+    document.write(Svetlana);
+
+</script>
+</body>
+</html>
