@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Box(h, w, d, m){
+        this.height = h;
+        this.width = w;
+        this.depth = d;
+        this.material = m;
+    }
+
+    Box.prototype.getValue = function () {
+        return this.height * this.width * this.depth;
+    };
+
+    // метод для проверки равенства объектов
+    Box.prototype.equals = function (otherObj) {
+        if (this.material === otherObj.material) {
+            return true;
+        }
+        return false;
+    }
+
+    var box1 = new Box(10, 15, 35, 'gas');
+    var box2 = new Box(20, 17, 3, 'water');
+    document.write('Value box1: ' + box1.getValue() + '<br/>');
+    document.write('Value box2: ' + box2.getValue());
+
+    // проверка равенства объектов с помощью метода equals
+    var rez = box1.equals(box2);
+    document.write('<br/>' + rez);
+
+    var box3 = new Box(2, 14, 35, 'water');
+    var rez = box2.equals(box3);
+    document.write('<br/>' + rez);
+
+
+
+</script>
+</body>
+</html>
