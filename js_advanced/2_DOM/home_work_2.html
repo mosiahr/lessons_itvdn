@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Урок 2 Задание 2</title>
+    <script>
+        window.onload = function () {
+            var div1 = document.getElementById('div1');
+            var buttonCreateParagraph = document.getElementById('createParagraph');
+            buttonCreateParagraph.onclick = function () {
+                var p = document.createElement("p");
+                p.innerHTML = "Paragraph";
+                div1.appendChild(p);
+
+                var divArr = div1.childNodes;
+                if (div1.getElementsByTagName('p').length > 10 ) {
+                    for (var i = 0; i < divArr.length; i++) {
+                        if ( divArr[i].nodeName == 'P'){
+                            div1.removeChild(divArr[i]);
+                            i--;
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+<input type="button" id="createParagraph" value="Создать параграф">
+<div id="div1"></div>
+<p>paragraph not del</p>
+</body>
+</html>
