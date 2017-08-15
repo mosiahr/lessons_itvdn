@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Урок 2 Задание 3</title>
+    <script>
+        window.onload = function () {
+            var elemets = Module.FindClass("class");
+            alert("Элементов с классом 'class': " + elemets.length);
+        }
+
+        // Модуль
+        var Module = {};
+
+        // Функция которая возвращает все элементы с определенным классом
+        Module.FindClass = function(className){
+
+            // Получаем все элементы тега body, пустой массив для заполнения и счетчик
+            var childs = document.body.childNodes,
+                    array = [];
+
+            // Перебор всех дочерних элементов
+            for (var i = 0; i < childs.length; i++){
+                if(childs[i].nodeType == 1){
+
+                    // Свойствой className возвращает название текущего класса
+                    if(childs[i].className == className){
+                        array.push(childs[i]);
+                    }
+                }
+            }
+            return array;
+        }
+
+    </script>
+</head>
+<body>
+    <p class="myclass"></p>
+    <p class="class"></p>
+    <p class="class"></p>
+    <p class="newclass"></p>
+    <p class="output"></p>
+    <p class="class"></p>
+    <div class="class"></div>
+
+
+</body>
+</html>
