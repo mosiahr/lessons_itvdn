@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Урок 3 Задание 1</title>
+    <script>
+        var ms = 0, sec = 0, min = 0;
+
+        window.onload = function () {
+
+            function count() {
+                if (ms == 0 && sec ==0&&min==0) {
+                    get("timer").innerHTML = "00:00:00";
+                }
+                else if (ms < 10 && sec < 10) {
+                    get("timer").innerHTML = "0" + min.toString() + ":0" + sec.toString() + ":0" + ms.toString();
+                }
+                else if (sec > 10 && ms < 10) {
+                    get("timer").innerHTML = "0" + min.toString() + ":" + sec.toString() + ":0" + ms.toString();
+                }
+                else if (sec<10) {
+                    get("timer").innerHTML = "0" + min.toString() + ":0" + sec.toString() + ":" + ms.toString();
+                }
+                else if (min < 10) {
+                    get("timer").innerHTML = "0" + min.toString() + ":" + sec.toString() + ":" + ms.toString();
+                }
+                ms++;
+                if (ms>99) {
+                    ms = 0;
+                    sec++;
+                    if (sec>59) {
+                        sec = 0;
+                        min++;
+                    }
+                }
+            }
+
+            get("start").onclick = function () {
+                // setInterval - планирование запуска указанной функции с заданным интервалом. Планирование и запуск будут происходить многократно.
+            // запускать функцию Count с интервалом в 0 секунд
+                intervalHandler = setInterval(count, 0);
+            }
+
+            get("stop").onclick = function () {
+                clearInterval(intervalHandler);
+            }
+            get("reset").onclick = function () {
+                ms = 0;
+                sec = 0;
+                min = 0;
+                get("timer").innerHTML = "00:00:00";
+            }
+
+        }
+
+        // Функция для быстрого получения доступа к элементам через функцию getElementById
+        var get = function (id) {
+            return document.getElementById(id);
+        }
+
+
+    </script>
+</head>
+<body>
+
+<div id="timer">00:00:00</div>
+<input id="start" type="button" value="Старт">
+<input id="stop" type="button" value="Стоп">
+<input id="reset" type="button" value="Сбросить">
+
+</body>
+</html>
