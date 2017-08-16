@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Урок 3 Задание 5</title>
+    <script>
+        window.onload = function () {
+
+            var ok = document.getElementById('ok');
+            ok.onclick = function () {
+                var massage = document.getElementById('massage').value;
+
+                // Создаем элемент marquee - бегущая строка
+                var newElement = document.createElement("marquee");
+
+                // Добавляем атрибуты к созданному элементу
+                newElement.setAttribute("behavior","alternate");
+                newElement.setAttribute("direction","left");
+
+                 // Вносим полученные данные от пользователя в новый элемент
+                newElement.innerHTML = massage;
+
+                // Добавляем элемент на страницу
+                document.body.appendChild(newElement);
+            }
+        }
+    </script>
+</head>
+<body>
+<label for="massage">Введите сообщение</label> <input id="massage" type="text">
+<input id="ok" type="button" value="OK">
+</body>
+</html>
