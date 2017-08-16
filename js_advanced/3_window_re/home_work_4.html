@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Урок 3 Задание 4</title>
+    <script>
+        window.onload = function () {
+
+            // создаем 3 флага для 3 элементов
+            var flagFirst = false, flagSecond = false, flagThird = false;
+
+            var js_1 = document.getElementById('js_1');
+                js_2 = document.getElementById('js_2');
+                js_3 = document.getElementById('js_3');
+
+
+            js_1.onclick = function () {
+                var w = window.open("./task_4/JS_Lesson_1.html", "Урок 1", "width=400,height=400");
+                js_1.innerHTML = "JS Урок 1 (Открыт)";
+                flagFirst = !flagFirst;
+                if(!flagFirst){
+                    js_1.innerHTML = "JS Урок 1";
+                    w.close();
+                }
+            }
+
+            js_2.onclick = function () {
+                var w = window.open("./task_4/JS_Lesson_2.html", "Урок 2", "width=400,height=400");
+                js_2.innerHTML = "JS Урок 2 (Открыт)";
+                flagFirst = !flagFirst;
+                if(!flagFirst){
+                    js_2.innerHTML = "JS Урок 2";
+                    w.close();
+                }
+            }
+
+            js_3.onclick = function () {
+                var w = window.open("./task_4/JS_Lesson_3.html", "Урок 3", "width=400,height=400");
+                js_3.innerHTML = "JS Урок 3 (Открыт)";
+                flagFirst = !flagFirst;
+                if(!flagFirst){
+                    js_3.innerHTML = "JS Урок 3";
+                    w.close();
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <a id="js_1" href="#">JS Урок 1</a><br/>
+    <a id="js_2" href="#">JS Урок 2</a><br/>
+    <a id="js_3" href="#">JS Урок 3</a><br/>
+</body>
+</html>
