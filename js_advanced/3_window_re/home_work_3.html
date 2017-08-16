@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Урок 3 Задание 2</title>
+    <script>
+        window.onload = function(){
+            // Событие onblur возникает при выходе из элемента input
+            document.getElementById('input').onblur = function () {
+                var inputStr = document.getElementById('input').value;
+                // Получаем арифметический знак
+                var operation = inputStr.match(/[+*/-]/g)[0];
+                // Получаем массив переданных элементов
+                var numberArray = inputStr.split(/\W+/g);
+                document.getElementById("output").innerHTML = switCase(numberArray, operation);
+
+            }
+
+            function switCase(arr, oper){
+                // Полученные строковые элементы из input переводим в целочисленные с помощью
+                // функции parseFloat()
+                var a = parseFloat(arr[0]),
+                    b = parseFloat(arr[1]);
+                // Проверка на 0
+                if(a == 0 || b == 0 && oper == "/"){
+                    return "На ноль делить нельзя!";
+                }
+                else{
+                    // С помощью switch-case определяем арифметическую функцию и возвращаем результат
+                    switch (oper){
+                        case "+": return a+b; break;
+                        case "-": return a-b;break;
+                        case "/": return a/b;break;
+                        case "*": return a*b;break;
+                    }
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <label>Введите выражение двух чисел </label><input id="input">
+    <p id="output"></p>
+</body>
+</html>
