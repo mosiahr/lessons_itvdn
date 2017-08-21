@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Урок 5 задание 2</title>
+    <script type="text/javascript">
+        // Пустой модуль
+        var Module = {};
+        // Функция для создания кросс браузерных обработчиков DOM Level 2 или IE
+        Module.createHandler = function (element, event, hadnler, capture) {
+            if(window.addEventListener){
+                element.addEventListener(event,handler,capture);
+            }
+            else if(window.attachEvent){
+                element.attachEvent('on'+element,event);
+            }
+        }
+        // Создание обработчика
+        Module.createHandler(window,'load',handler,false);
+        function handler(){
+            alert('hello');
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
