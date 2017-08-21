@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Урок 5 задание 1</title>
+    <script>
+        window.onload = function () {
+
+            var first = document.getElementById('first');
+	        var second = document.getElementById('second');
+
+            var add = document.getElementById('add');
+            var subtract = document.getElementById('subtract');
+            var multiply = document.getElementById('multiply');
+            var division = document.getElementById('division');
+
+            add.addEventListener("click", function () {
+                alert(operation(first.value, second.value, add.value));
+            }, false)
+
+            subtract.addEventListener("click", function () {
+                alert(operation(first.value, second.value, subtract.value));
+            }, false)
+
+            multiply.addEventListener("click", function () {
+                alert(operation(first.value, second.value, multiply.value));
+            }, false)
+
+            division.addEventListener("click", function () {
+                alert(operation(first.value, second.value, division.value));
+            }, false)
+
+            function operation(first, second, oper) {
+                switch (oper) {
+                    case "+": return parseFloat(first) + parseFloat(second); break;
+                    case "-": return parseFloat(first) - parseFloat(second); break;
+                    case "*": return parseFloat(first) * parseFloat(second); break;
+                    case "/": return parseFloat(first) / parseFloat(second); break;
+                }
+            }
+
+            // Шаблон для проверки значения
+            var pattern = /\d/;
+            // Проверка введенных данных пользователем
+            first.addEventListener('keypress', function (e) {
+                var str = String.fromCharCode(e.charCode);
+                if(!pattern.test(str)){
+                    e.preventDefault();
+                }
+            })
+            second.addEventListener('keypress', function (e) {
+                var str = String.fromCharCode(e.charCode);
+                if(!pattern.test(str)){
+                    e.preventDefault();
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+
+
+<input type="text" name="name" id="first">
+<input type="text" name="name" id="second">
+
+<br/>
+<br/>
+<input id="add" type="button" name="name" value="+">
+<input id="subtract" type="button" name="name" value="-">
+<input id="multiply" type="button" name="name" value="*">
+<input id="division" type="button" name="name" value="/">
+
+</body>
+</html>
